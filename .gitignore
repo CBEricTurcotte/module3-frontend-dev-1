@@ -4,3 +4,4 @@ test-report.html
 .idea/
 .vscode/
 package-lock.json
+cypress/screenshots

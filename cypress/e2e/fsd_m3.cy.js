@@ -5,27 +5,24 @@ import chaiColors from "chai-colors";
 chai.use(chaiColors);
 chai.use(require("chai-sorted"));
 
-describe("Front En Dev 1", () => {
+describe("FSD Module 3", () => {
   beforeEach(() => {
     cy.visit("index.html");
   });
 
-  it("Styling 1 - Sans-serif fonts are used for navigation elements and headlines", () => {
+  it("T1- Styling 1 - Sans-serif fonts are used for navigation elements and headlines", () => {
     cy.get("#header")
       .should("have.css", "font-family")
       .and("match", /sans-serif/);
   });
-  it("Styling 2 - A serif font is used for paragraphs", () => {
+
+  it("T2 - Styling 2 - A serif font is used for paragraphs", () => {
     cy.get("#services > .container > ")
       .should("have.css", "font-family")
       .and("match", /serif/);
   });
-  it("Styling 3 - Some gray background elements are in #0a65a0 blue", () => {
-    // cy.get('#portfolio > :nth-child(1) > .heading-title')
-    //   .should('have.css', 'background-color')
-    //   .and('be.colored', '#666')
-  });
-  it("Styling 4 - All gray background elements are in #0a65a0 blue", () => {
+
+  it("T3 - Styling 4 - All gray background elements are in #0a65a0 blue", () => {
     cy.get("#portfolio > :nth-child(1) > .heading-title > h2").should(
       "have.css",
       "color",
@@ -37,45 +34,44 @@ describe("Front En Dev 1", () => {
       "rgb(10, 101, 160)"
     );
   });
-  it("Styling 5 - Some headlines (text) are in #0a65a0 blue", () => {
-    // cy.get("#services > .container > ")
-    //   .should("have.css", "font-family")
-    //   .and("match", /serif/);
-  });
-  it("Styling 6 - All headlines (text) are in #0a65a0 blue", () => {
+
+  it("T4 - Styling 6 - All headlines (text) are in #0a65a0 blue", () => {
     cy.get(".col-md-8 > .text-center > h2").should(
       "have.css",
       "color",
       "rgb(10, 101, 160)"
     );
+
     cy.get(".col-sm-4 > .text-center > h2").should(
       "have.css",
       "color",
       "rgb(10, 101, 160)"
     );
   });
-  it("Styling 7 - The foundation date of the company is red, bold and larger than surrounding fonts", () => {
+
+  it("T5 - Styling 7 - The foundation date of the company is red, bold and larger than surrounding fonts", () => {
     cy.get("#parallax > .container > .text-center")
       .find("span")
       .should("have.css", "color", "rgb(169, 69, 69)")
       .and("have.css", "font-weight", "700");
-    // .and("be.gt", "fs-40 fw-300");
   });
-  it("Styling 8 - In the Company Highlights section,space things properly.", () => {
+
+  it("T6 - Styling 8 - Tthe Company Highlights section images are spaced properly", () => {
     cy.get(".portfolio-nogutter > .row > :nth-child(1)").should(
       "have.css",
       "padding",
       "0px 15px"
     );
   });
-  it("Styling 9 - Visit Us section Business hours are emphasized", () => {
+
+  it("T7 - Styling 9 - Visit Us section Business hours are emphasized", () => {
     cy.get("#biz_address > strong");
     cy.get("#biz_phone > strong");
     cy.get("#biz_phone > strong");
     cy.get("#biz_saturday").should("have.css", "font-weight", "700");
   });
-  it("Styling 10 - Background color of Quote page tabs changes based on the typeof building selected", () => {
-    // Residential check
+
+  it("T8 - Styling 10 - Background color of Quote page tabs changes based on the typeof building selected", () => {
     cy.get("#quote-nav").click();
     cy.get(".select-building-type > .card-heading").should(
       "have.css",
@@ -90,21 +86,25 @@ describe("Front En Dev 1", () => {
       "background-color",
       "rgb(12, 149, 238)"
     );
+
     cy.get(".estimate-num-elv > .card-heading").should(
       "have.css",
       "background-color",
       "rgb(12, 149, 238)"
     );
+
     cy.get(".product-line > .card-heading").should(
       "have.css",
       "background-color",
       "rgb(12, 149, 238)"
     );
+
     cy.get(".final-pricing-display > .card-heading").should(
       "have.css",
       "background-color",
       "rgb(12, 149, 238)"
     );
+    
   });
   it("Styling 11 - Residential (light blue), Commercial (light red), Industrial(gray, no change)", () => {
     // Commercial check
