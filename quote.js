@@ -205,19 +205,30 @@ radioBtns_div.querySelectorAll("input[type='radio']").forEach((radioBtn) => {
 });
 
 buildingType_select.addEventListener("change", function () {
-    resetForm();
-    buildingType = this.value;
-    if (buildingType == "---Select---") {
-        resetForm();
-    } else {
-        displayBuildingFields(buildingType);
-        estimateNumElv_div.addEventListener("change", function () {
-            if (!allBuildingFieldsCompleted(buildingType)) {
-                return;
-            } else {
-                displayElvCalcResult(buildingType);
-                updatePricingDisplay();
-            }
-        });
-    }
+  resetForm();
+  let card_headers = document.querySelectorAll(".card-heading");
+  buildingType = this.value;
+
+  if (buildingType === "---Select---") {
+    card_headers.forEach(header => header.style.backgroundColor = "#f8f9fa");
+  } else {
+    displayBuildingFields(buildingType);
+
+    const backgroundColors = {
+      residential: "#0C95EEFF",
+      commercial: "#fc4646",
+      industrial: "#BEBEBEFF"
+    };
+
+    card_headers.forEach(header => {
+      header.style.backgroundColor = backgroundColors[buildingType] || "#f8f9fa";
+    });
+
+    document.querySelector(".estimate-num-elv").addEventListener("change", function () {
+      if (allBuildingFieldsCompleted(buildingType)) {
+        displayElvCalcResult(buildingType);
+        updatePricingDisplay();
+      }
+    });
+  }
 });

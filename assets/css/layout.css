@@ -5255,7 +5255,9 @@ div.vector-map {
         #2cc99d 100%
     ) !important;
 }
-
+.heading-title h2 {
+    color: #0a65a0;
+}
 /* sizes */
 ul.portfolio-detail-list {
     font-size: 14px;
@@ -9924,3 +9926,5 @@ footer.sticky {
     color: #999 !important;
     z-index: 100;
 }
+
+
