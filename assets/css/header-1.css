@@ -1,6 +1,9 @@
 body, h1, h2, h3, h4, h5, h6, #topMain.nav-pills>li>a {
     font-family: 'Roboto Slab', sans-serif;
 }
+#team.section-xs.dark {
+    background-color: #0a65a0;
+}
 
 #topMain>li>a {
 	height:96px;

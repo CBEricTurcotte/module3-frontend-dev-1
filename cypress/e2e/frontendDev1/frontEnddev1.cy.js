@@ -25,17 +25,9 @@ describe("Front En Dev 1", () => {
     //   .should('have.css', 'background-color')
     //   .and('be.colored', '#666')
   });
-  it.skip("Styling 4 - All gray background elements are in #0a65a0 blue", () => {
-    cy.get("#portfolio > :nth-child(1) > .heading-title > h2").should(
-      "have.css",
-      "color",
-      "rgb(10, 101, 160)"
-    );
-    cy.get("#clients > .container > .heading-title > h2").should(
-      "have.css",
-      "color",
-      "rgb(10, 101, 160)"
-    );
+  it("Styling 4 - All gray background elements are in #0a65a0 blue", () => {
+    cy.get("#team").should("have.css", "background-color", "rgb(10, 101, 160)");
+
   });
   it.skip("Styling 5 - Some headlines (text) are in #0a65a0 blue", () => {
     // cy.get("#services > .container > ")
